@@ -1,0 +1,56 @@
+# Adds a submission to the library when the repository owner puts the "approved" label on it.
+# The issue text is never pasted into a shell command: the script reads it from the event file.
+name: Add approved item
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: library
+  cancel-in-progress: false
+
+jobs:
+  add:
+    if: github.event.label.name == 'approved' && github.event.sender.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Read the submission and download its files
+        id: add
+        env:
+          RESULT_FILE: ${{ runner.temp }}/result.md
+        run: node scripts/add-from-issue.mjs
+      - name: Rebuild the index and publish
+        if: steps.add.outputs.ok == 'true'
+        env:
+          ITEM_ID: ${{ steps.add.outputs.id }}
+        run: |
+          node scripts/build-index.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add items library.json
+          git commit -m "Add $ITEM_ID (#${{ github.event.issue.number }})"
+          git push
+      - name: Tell the submitter
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          OK: ${{ steps.add.outputs.ok }}
+          RESULT_FILE: ${{ runner.temp }}/result.md
+        run: |
+          if [ -f "$RESULT_FILE" ]; then gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$RESULT_FILE"; fi
+          if [ "$OK" = "true" ]; then
+            gh issue edit "$NUMBER" --repo "$GITHUB_REPOSITORY" --add-label added --remove-label approved,submission
+            gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY" --reason completed
+          else
+            gh issue edit "$NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label approved
+          fi

@@ -1,0 +1,121 @@
+name: Share something in the library
+description: Add a track, chassis, body, building, livery, decal sheet or race-screen pack to the SlotForge community library.
+title: "[Library] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing! Fill in the form, drag in a picture and a .zip with your files, and submit.
+        Once it is approved, your item appears in the [community library](https://thedutchmanjames.github.io/library/) with you as its maker.
+        Change the title above to the name of your item, for example **[Library] Kidney bean 4-lane**.
+  - type: dropdown
+    id: type
+    attributes:
+      label: What is it?
+      options:
+        - Track
+        - Chassis
+        - Body
+        - Building
+        - Livery
+        - Decal sheet
+        - Race-screen pack
+    validations:
+      required: true
+  - type: dropdown
+    id: app
+    attributes:
+      label: Made for
+      description: The app that opens it. Choose "Any 3D printer" for a plain STL, like a building.
+      options:
+        - SlotForge Circuit
+        - SlotForge Foundry
+        - SlotForge Anvil
+        - SlotForge Frame
+        - SlotForge Livery
+        - SlotForge Decals
+        - SlotForge Timing
+        - Any 3D printer (STL)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Oldest app version it opens in
+      description: For example 0.5.0. Leave empty for a plain STL.
+      placeholder: "0.5.0"
+  - type: dropdown
+    id: scale
+    attributes:
+      label: Scale
+      options:
+        - "1/32"
+        - "1/24"
+        - "1/43"
+        - "HO"
+        - Not scale-specific
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What it is, what it fits and anything good to know. One or two short paragraphs.
+    validations:
+      required: true
+  - type: textarea
+    id: preview
+    attributes:
+      label: Picture
+      description: Drag in one picture (PNG or JPG), for example a screenshot from the app or a photo of the print.
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Files
+      description: Drag in one .zip with everything needed (up to 25 MB). Zip it even if it is one file, because GitHub does not accept STL or app files on their own.
+    validations:
+      required: true
+  - type: dropdown
+    id: printed
+    attributes:
+      label: Printed and tested?
+      options:
+        - Yes, printed and tested
+        - Not printed yet
+        - Not a printed item
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Print notes
+      description: If you printed it, which printer, material and settings you used, and what you found (fit, supports, anything to change).
+  - type: dropdown
+    id: licence
+    attributes:
+      label: Licence
+      description: What others may do with it. CC BY 4.0 lets anyone use and change it as long as they credit you.
+      options:
+        - CC BY 4.0 (credit me)
+        - CC BY-NC 4.0 (credit me, no selling)
+        - CC BY-SA 4.0 (credit me, share changes alike)
+        - CC0 (no conditions)
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: Name to show
+      description: Leave empty to show your GitHub name.
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Your rights
+      options:
+        - label: I made this, or I have the right to share it under the licence above.
+          required: true
+        - label: It contains no paid, copyrighted or trademarked parts of anyone else, such as a maker's chassis, logos or decals.
+          required: true
