@@ -1,0 +1,12 @@
+name = "slotforge-library"
+main = "index.mjs"
+compatibility_date = "2026-11-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://thedutchmanjames.github.io"
+
+# Secrets (set once with `npx wrangler secret put <NAME>`, never written here):
+#   GITHUB_TOKEN      fine-grained token for theDutchmanJames/SlotForgeLibrary only:
+#                     Contents read/write, Pull requests read/write
+#   TURNSTILE_SECRET  secret key of the Turnstile widget
+#   TICKET_KEY        any long random text

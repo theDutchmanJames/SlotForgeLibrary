@@ -4,9 +4,9 @@ name: Rebuild index
 on:
   push:
     branches: [main]
-    paths: ['items/**', 'scripts/**']
+    paths: ['items/**', 'scripts/**', 'worker/**', 'tests/**']
   pull_request:
-    paths: ['items/**', 'scripts/**']
+    paths: ['items/**', 'scripts/**', 'worker/**', 'tests/**']
   workflow_dispatch:
 
 permissions:

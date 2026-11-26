@@ -62,3 +62,15 @@ test('sniffs file types', () => {
   assert.equal(sniff(Uint8Array.from([0x50, 0x4b, 0x03, 0x04, 0, 0, 0, 0, 0, 0, 0, 0])), 'zip');
   assert.equal(sniff(Uint8Array.from([0x3c, 0x73, 0x76, 0x67, 0, 0, 0, 0, 0, 0, 0, 0])), null);
 });
+
+test('original design: optional web address, credited on the item', async () => {
+  const { originalUrl } = await import('../scripts/rules.mjs');
+  assert.equal(originalUrl(''), null);
+  assert.equal(originalUrl('printables.com/model/123'), 'https://printables.com/model/123');
+  assert.equal(originalUrl('https://www.thingiverse.com/thing:42'), 'https://www.thingiverse.com/thing:42');
+  assert.throws(() => originalUrl('javascript:alert(1)'), /web address/);
+  assert.throws(() => originalUrl('not a link'), /web address/);
+  const { item } = readSubmission(issue({ 'Original design': 'https://www.printables.com/model/99' }));
+  assert.equal(item.basedOn, 'https://www.printables.com/model/99');
+  assert.equal(readSubmission(issue()).item.basedOn, null);
+});

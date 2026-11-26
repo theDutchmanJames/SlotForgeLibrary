@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "index": "node scripts/build-index.mjs"
+    "index": "node scripts/build-index.mjs",
+    "worker": "cd worker && npx wrangler deploy"
   },
   "engines": { "node": ">=22" }
 }

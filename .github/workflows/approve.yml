@@ -32,7 +32,11 @@ jobs:
         if: steps.add.outputs.ok == 'true'
         env:
           ITEM_ID: ${{ steps.add.outputs.id }}
+          ZIP: ${{ steps.add.outputs.zip }}
+          GH_TOKEN: ${{ github.token }}
         run: |
+          gh release view files --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create files --repo "$GITHUB_REPOSITORY" --title "Library files" --notes "The .zip files of the SlotForge community library. Browse them at https://thedutchmanjames.github.io/library/"
+          gh release upload files "$ZIP" --repo "$GITHUB_REPOSITORY"
           node scripts/build-index.mjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

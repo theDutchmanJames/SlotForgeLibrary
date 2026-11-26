@@ -64,6 +64,12 @@ body:
       description: What it is, what it fits and anything good to know. One or two short paragraphs.
     validations:
       required: true
+  - type: input
+    id: original
+    attributes:
+      label: Original design
+      description: Is it based on someone else's design? Paste the web address of the original, so its maker gets the credit. Leave empty if it is all your own.
+      placeholder: "https://"
   - type: textarea
     id: preview
     attributes:

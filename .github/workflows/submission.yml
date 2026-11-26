@@ -1,0 +1,68 @@
+# Pull requests opened by the website's submit form (branches submission/<id>).
+# Opened: lists what is inside the waiting .zip and refuses blocked files.
+# Merged: moves the .zip to the public "files" release. Closed: deletes it.
+name: Website submission
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: submission-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.event.action != 'closed' && startsWith(github.event.pull_request.head.ref, 'submission/') && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the .zip
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          RESULT_FILE: ${{ runner.temp }}/result.md
+        run: node scripts/submission.mjs check
+      - name: Check the item
+        run: node --test tests/*.test.mjs && node scripts/build-index.mjs
+      - name: Comment
+        if: always() && github.event.action == 'opened'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          RESULT_FILE: ${{ runner.temp }}/result.md
+        run: if [ -f "$RESULT_FILE" ]; then gh pr comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$RESULT_FILE"; fi
+
+  finish:
+    if: github.event.action == 'closed' && startsWith(github.event.pull_request.head.ref, 'submission/') && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Publish or delete the .zip
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          RESULT_FILE: ${{ runner.temp }}/result.md
+          MERGED: ${{ github.event.pull_request.merged }}
+        run: node scripts/submission.mjs "$([ "$MERGED" = true ] && echo publish || echo decline)"
+      - name: Comment and tidy up
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+          RESULT_FILE: ${{ runner.temp }}/result.md
+        run: |
+          if [ -f "$RESULT_FILE" ]; then gh pr comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$RESULT_FILE"; fi
+          gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$BRANCH" || true
