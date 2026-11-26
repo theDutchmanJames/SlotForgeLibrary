@@ -1,0 +1,21 @@
+{
+  "id": "test-q6k2xs12",
+  "title": "Test",
+  "type": "body",
+  "app": "Anvil",
+  "appVersion": null,
+  "scale": "1/32",
+  "description": "James' test upload",
+  "printed": "untested",
+  "printNotes": null,
+  "licence": "CC-BY-4.0",
+  "author": "Datsun",
+  "basedOn": "https://www.printables.com/model/1709022-widebody-datsun",
+  "github": null,
+  "issue": null,
+  "added": "2026-11-26",
+  "preview": "preview.jpg",
+  "file": "test-q6k2xs12.zip",
+  "storage": "release",
+  "size": 559120
+}
