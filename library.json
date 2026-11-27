@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-27T13:10:23.307Z",
+  "updated": "2026-11-27T13:31:36.466Z",
   "items": [
     {
       "id": "james-slotcar-track-carrera-00eolfb5",
@@ -23,6 +23,28 @@
       "storage": "release",
       "size": 6841,
       "download": "https://github.com/theDutchmanJames/SlotForgeLibrary/releases/download/files/james-slotcar-track-carrera-00eolfb5.zip"
+    },
+    {
+      "id": "track-signage-0rq1d8of",
+      "title": "Track Signage",
+      "type": "building",
+      "app": "Foundry",
+      "appVersion": null,
+      "scale": "1/32",
+      "description": "a Collection of .STL's containing real world brands as trackside banners!",
+      "printed": "tested",
+      "printNotes": null,
+      "licence": "CC-BY-4.0",
+      "author": "theDutchmanJames",
+      "basedOn": null,
+      "github": null,
+      "issue": null,
+      "added": "2026-11-27",
+      "preview": "preview.jpg",
+      "file": "track-signage-0rq1d8of.zip",
+      "storage": "release",
+      "size": 971116,
+      "download": "https://github.com/theDutchmanJames/SlotForgeLibrary/releases/download/files/track-signage-0rq1d8of.zip"
     }
   ]
 }
