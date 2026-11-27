@@ -1,0 +1,21 @@
+{
+  "id": "track-signage-0rq1d8of",
+  "title": "Track Signage",
+  "type": "building",
+  "app": "Foundry",
+  "appVersion": null,
+  "scale": "1/32",
+  "description": "a Collection of .STL's containing real world brands as trackside banners!",
+  "printed": "tested",
+  "printNotes": null,
+  "licence": "CC-BY-4.0",
+  "author": "theDutchmanJames",
+  "basedOn": null,
+  "github": null,
+  "issue": null,
+  "added": "2026-11-27",
+  "preview": "preview.jpg",
+  "file": "track-signage-0rq1d8of.zip",
+  "storage": "release",
+  "size": 971116
+}
