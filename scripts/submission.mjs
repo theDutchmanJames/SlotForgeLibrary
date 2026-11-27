@@ -62,7 +62,7 @@ if (mode === 'check') {
   if (existing) await api('DELETE', existing.url);
   await api('POST', files.upload_url.replace(/\{.*\}$/, '') + `?name=${encodeURIComponent(name)}`, zip, { 'Content-Type': 'application/zip' });
   await api('DELETE', asset.url);
-  await fs.writeFile(result, `Published: [${name}](https://github.com/${repo}/releases/download/${FILES_TAG}/${name}) is in the [community library](https://thedutchmanjames.github.io/library/#${id}). It can take a minute to appear.`);
+  await fs.writeFile(result, `Published: [${name}](https://github.com/${repo}/releases/download/${FILES_TAG}/${name}) is in the [community library](https://thedutchmanjames.github.io/library/#${id}). It appears on the website within about 5 minutes (GitHub caches the list).`);
 } else if (mode === 'decline') {
   if (asset) await api('DELETE', asset.url);
   await fs.writeFile(result, `Not added to the library. The uploaded .zip has been deleted.`);
