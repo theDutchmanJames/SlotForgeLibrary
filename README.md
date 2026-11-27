@@ -1,53 +1,78 @@
+<p align="left">
+  <img src="docs/images/library-icon.svg" alt="SlotForge Community Library icon" width="96" align="right">
+  <img src="docs/images/slotforge-brand.png" alt="SlotForge — Slotcar App Collection" width="400">
+</p>
+<br clear="both">
+
 # SlotForge Community Library
 
-Tracks, chassis, bodies, buildings, liveries, decal sheets and race-screen packs, shared by slotcar racers and builders for the free [SlotForge apps](https://thedutchmanjames.github.io/).
+**Built by racers. Shared with everyone.**
 
-**[Browse the library →](https://thedutchmanjames.github.io/library/)**
+Tracks, chassis, bodies, buildings, liveries, decal sheets and race-screen packs, made by slotcar racers and builders for the free SlotForge apps. Each one comes with a picture, its scale, the app it opens in and whether its maker printed and tested it.
 
-Each item shows a picture, its scale, the app and oldest app version it opens in, whether its maker printed and tested it, and a link to the original design it is based on.
+**Free to download. No account needed to share.**
 
-## Share something
+[Browse the library](https://thedutchmanjames.github.io/library/) · [Share yours](https://thedutchmanjames.github.io/library/#share) · [Licences](#use-what-you-download) · [Change or remove an item](#change-or-remove-an-item)
 
-Choose **Share yours** on the [library page](https://thedutchmanjames.github.io/library/). No account is needed: fill in the form, add a picture and a **.zip** with your files (up to 25 MB), and send it. If your design is based on someone else's, paste the web address of the original so its maker gets the credit.
+## SlotForge App Collection
 
-Every item is reviewed before it appears. Only share what you made or may share: bought chassis, pods and bodies, and makers' logos and decals, belong to their makers.
+The library is part of the **SlotForge App Collection**—free apps for building tracks, managing your cars, designing their appearance and exploring their performance.
+
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeTiming/main/build/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Timing](https://github.com/theDutchmanJames/SlotForgeTiming)** — Lap timing, race management and custom race displays for analogue slot-car tracks.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgePaddock/main/assets/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Paddock](https://github.com/theDutchmanJames/SlotForgePaddock)** — Organize your slotcar collection, photographs, parts, setups and maintenance in a virtual garage and workshop.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeCircuit/main/app/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Circuit](https://github.com/theDutchmanJames/SlotForgeCircuit)** — Design slotcar tracks, including routed and FreeForm layouts, and export track data for Timing's Live Tracker.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeFoundry/main/assets/slotforge-foundry.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Foundry](https://github.com/theDutchmanJames/SlotForgeFoundry)** — Turn slotcar track into printable parts, plan a layout and edit any STL.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeAnvil/main/desktop/build/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Anvil](https://github.com/theDutchmanJames/SlotForgeAnvil)** — Turn any car model into a light, printable slotcar body.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeFrame/main/desktop/build/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Frame](https://github.com/theDutchmanJames/SlotForgeFrame)** — Design a 3D-printable slotcar chassis and motor pod around the wheels, guide, motor and gears you race with.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeTelemetry/main/assets/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Telemetry](https://github.com/theDutchmanJames/SlotForgeTelemetry)** — Explore gearing, motors, tyres and weight, compare setups, and analyse recorded lap times.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeLivery/main/assets/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Livery](https://github.com/theDutchmanJames/SlotForgeLivery)** — Plan paint schemes, stripes, race numbers and decals on editable 2D car templates.
+- <img src="https://raw.githubusercontent.com/theDutchmanJames/SlotForgeDecals/main/assets/icon.png" alt="" width="24" height="24" align="absmiddle"> **[SlotForge Decals](https://github.com/theDutchmanJames/SlotForgeDecals)** — Size and arrange artwork into decal sheets, then export a PDF for printing.
+
+Visit each app's repository for its features, downloads and getting-started guide, or see them all on the [SlotForge website](https://thedutchmanjames.github.io/).
+
+## Find something
+
+Every item in the library shows:
+
+- **A picture** of the finished track, car or screen
+- **The scale:** 1/32, 1/24, 1/43, HO, or not scale-specific
+- **The app it is for**, and the oldest app version that opens it
+- **Printed and tested:** whether its maker printed it and tried it on a track
+- **The original design**, if it is based on someone else's work
+- **The licence** its maker chose
+
+Filter by type, app or scale, or search by name, maker or description. Choose **Download** to get the item's .zip.
+
+## Use what you download
+
+Each item has the licence its maker chose:
+
+| Licence | You may |
+|---|---|
+| **CC BY 4.0** | Use, print, change and share it, also commercially. Credit the maker. |
+| **CC BY-NC 4.0** | Use, print, change and share it, but not for money. Credit the maker. |
+| **CC BY-SA 4.0** | Use, print, change and share it. Credit the maker and share your changes under the same licence. |
+| **CC0** | Anything, no conditions. |
+
+If you print something, it is nice to let the maker know how it went.
+
+## Share your own
+
+Choose **[Share yours](https://thedutchmanjames.github.io/library/#share)** on the library page. You don't need an account.
+
+1. **Fill in the form:** a name, what it is, the scale, the app it is for and a short description.
+2. **Add a picture** and a **.zip** with your files, up to 25 MB.
+3. **Credit the original.** If your design is based on someone else's, paste the web address of the original so its maker gets the credit.
+4. **Send it.** Every item is checked by hand before it appears. Once it is accepted, it shows in the library within about 5 minutes.
+
+Only share what you made or are allowed to share. Bought chassis, pods and bodies, and makers' logos and decals, belong to their makers. Programs and scripts are not accepted in the .zip.
 
 Have a GitHub account? You can also use the **[GitHub form](https://github.com/theDutchmanJames/SlotForgeLibrary/issues/new?template=submit-item.yml)**.
 
 ## Change or remove an item
 
-Open an [issue](https://github.com/theDutchmanJames/SlotForgeLibrary/issues/new) with the item's name and what should change. Makers can always have their own items removed.
+[Open an issue](https://github.com/theDutchmanJames/SlotForgeLibrary/issues/new) with the item's name and what should change. Makers can always have their own items removed.
 
-## Licences
+---
 
-Every item has the licence its maker chose (CC BY, CC BY-NC, CC BY-SA or CC0), shown in the library and in its `item.json`. Download, print and change items within that licence, and credit the maker.
-
-## How it works
-
-- `items/<id>/` holds each item's `item.json` and picture. The `.zip` files are in the **files** release, so the repository stays small.
-- `library.json` is the index the website reads. The **Rebuild index** workflow writes it after every change in `items/`.
-- **From the website:** a Cloudflare Worker (`worker/`) checks the form and the spam check, puts the item on a branch `submission/<id>`, streams the .zip into the draft release **Pending submissions** (only the owner can see it), and opens a pull request. The **Website submission** workflow lists what is inside the .zip and refuses programs.
-  **Merge** the pull request to publish: the .zip moves to the public **files** release. **Close** it to decline: the .zip is deleted.
-- **From the GitHub form:** putting the **approved** label on the issue (owner only) runs **Add approved item**.
-- `npm test` runs the checks for both routes.
-
-## Setting up the website form (once)
-
-The website's **Share yours** button opens the GitHub form until these steps are done.
-
-1. **Cloudflare account.** Sign up for free at [dash.cloudflare.com](https://dash.cloudflare.com/sign-up).
-2. **Spam check.** In Cloudflare, open **Turnstile → Add widget**. Name it *SlotForge library*, add the hostname `thedutchmanjames.github.io`, choose **Managed**, and create it. Keep the **site key** and the **secret key**.
-3. **GitHub token.** On GitHub, open **Settings → Developer settings → Fine-grained tokens → Generate new token**. Repository access: **Only select repositories → SlotForgeLibrary**. Permissions: **Contents: Read and write** and **Pull requests: Read and write**. Copy the token.
-4. **Deploy the Worker.** In a terminal in this folder:
-   ```
-   cd worker
-   npx wrangler login
-   npx wrangler deploy
-   npx wrangler secret put GITHUB_TOKEN
-   npx wrangler secret put TURNSTILE_SECRET
-   npx wrangler secret put TICKET_KEY
-   ```
-   Paste the token, the Turnstile secret key and, for `TICKET_KEY`, any long random text when asked. `wrangler deploy` prints the Worker's address, like `https://slotforge-library.<you>.workers.dev`.
-5. **Connect the website.** In the website's `content/library-config.json`, set `submitUrl` to the Worker's address and `turnstileSiteKey` to the Turnstile site key, then publish the website.
-
-Free plans are enough: the Worker streams each .zip straight to GitHub without holding it.
+<sub>Running the library: see [MAINTAINING.md](MAINTAINING.md).</sub>
